@@ -4,7 +4,7 @@
 
 <br />
 
-<img src="./assets/profile-avatar.png" width="210" alt="Ahmed Mohamed Taha profile portrait" />
+<img src="./profile-avatar.png" width="210" alt="Ahmed Mohamed Taha profile portrait" />
 
 <br />
 

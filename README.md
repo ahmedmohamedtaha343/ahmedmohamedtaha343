@@ -5,9 +5,13 @@
 <br />
 
 
+</div>
+
+<br />
+
+[![GitHub followers](https://img.shields.io/github/followers/CyrisXD?logo=GitHub&style=for-the-badge)](https://github.com/CyrisXD) &nbsp; [![GitHub Stars](https://img.shields.io/github/stars/CyrisXD?logo=github&style=for-the-badge)](https://github.com/CyrisXD) &nbsp;
 <img src="https://komarev.com/ghpvc/?username=ahmedmohamedtaha343&style=for-the-badge&color=6366F1&label=PROFILE+VIEWS" alt="Profile views" />
 
-</div>
 
 ---
 

@@ -15,15 +15,7 @@
 
 ---
 
-## ✦ A little about me
-
-Hey! I'm **Ahmed Mohamed Taha**, a Full Stack Developer from Egypt. I enjoy the process of taking an idea from a rough thought and turning it into something people can actually use.
-
-For me, development isn't just writing code. It's understanding a problem, breaking it into smaller pieces, choosing the right tools, and shaping a solution that feels simple from the outside — even when there's a lot happening behind the scenes.
-
-I'm interested in the whole journey of building software: the look and feel of an interface, the logic that powers it, the data behind it, and the details that make an application useful. I like exploring different ways to build things, learning through experiments, and getting better with every project.
-
-> **In a world full of chaos, I build logic.**
+> ***<h2>In a world full of chaos, I build logic.✨</h2>***  
 
 ### What I enjoy building
 

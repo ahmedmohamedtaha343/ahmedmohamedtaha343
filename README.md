@@ -4,14 +4,7 @@
 
 <br />
 
-<img src="./profile-avatar.png" width="210" alt="Ahmed Mohamed Taha profile portrait" />
 
-<br />
-
-<a href="https://github.com/ahmedmohamedtaha343">
-  <img src="https://img.shields.io/badge/GitHub-ahmedmohamedtaha343-181717?style=for-the-badge&logo=github" alt="GitHub profile" />
-</a>
-<img src="https://img.shields.io/badge/STATUS-Learning%20%26%20Building-8B5CF6?style=for-the-badge" alt="Learning and Building" />
 <img src="https://komarev.com/ghpvc/?username=ahmedmohamedtaha343&style=for-the-badge&color=6366F1&label=PROFILE+VIEWS" alt="Profile views" />
 
 </div>

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="360" viewBox="0 0 1000 360" role="img" aria-labelledby="title desc">
   <title id="title">Ahmed Mohamed Taha — Full Stack Developer</title>
-  <desc id="desc">A dark futuristic purple and blue developer banner with an animated identity message.</desc>
+  <desc id="desc">A dark futuristic purple and blue developer banner with live typing animation and dynamic background.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#080817"/>
@@ -17,48 +17,86 @@
       <stop offset="1" stop-color="#38bdf8" stop-opacity=".55"/>
     </linearGradient>
     <radialGradient id="glowA">
-      <stop offset="0" stop-color="#9333ea" stop-opacity=".35"/>
+      <stop offset="0" stop-color="#9333ea" stop-opacity=".42"/>
       <stop offset="1" stop-color="#9333ea" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="glowB">
-      <stop offset="0" stop-color="#2563eb" stop-opacity=".32"/>
+      <stop offset="0" stop-color="#2563eb" stop-opacity=".38"/>
       <stop offset="1" stop-color="#2563eb" stop-opacity="0"/>
     </radialGradient>
+
+    <!-- شبكة خلفية متحركة -->
     <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
-      <path d="M34 0H0V34" fill="none" stroke="#c4b5fd" stroke-opacity=".07" stroke-width="1"/>
+      <path d="M34 0H0V34" fill="none" stroke="#c4b5fd" stroke-opacity=".08" stroke-width="1"/>
+      <animateTransform attributeName="patternTransform" type="translate" from="0 0" to="34 34" dur="12s" repeatCount="indefinite"/>
     </pattern>
+
     <clipPath id="clip"><rect width="1000" height="360" rx="24"/></clipPath>
     <filter id="blur"><feGaussianBlur stdDeviation="38"/></filter>
   </defs>
+
   <style>
     .sans{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
     .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
-    .orbA{animation:floatA 13s ease-in-out infinite alternate}
-    .orbB{animation:floatB 16s ease-in-out infinite alternate}
-    @keyframes floatA{to{transform:translate(55px,22px)}}
-    @keyframes floatB{to{transform:translate(-45px,-18px)}}
-    .msg{opacity:0;animation:cycle 12s infinite}
-    .m2{animation-delay:4s}.m3{animation-delay:8s}
-    @keyframes cycle{0%{opacity:0;transform:translateY(9px)}5%,29%{opacity:1;transform:translateY(0)}34%,100%{opacity:0;transform:translateY(-8px)}}
-    .cursor{animation:blink 1s steps(1) infinite}
+
+    /* حركة الإضاءات الخلفية */
+    .orbA{animation:floatA 11s ease-in-out infinite alternate}
+    .orbB{animation:floatB 14s ease-in-out infinite alternate}
+    @keyframes floatA{to{transform:translate(75px,35px) scale(1.1)}}
+    @keyframes floatB{to{transform:translate(-65px,-30px) scale(1.12)}}
+
+    /* تدفق الموجة الضوئية */
+    .wave{stroke-dasharray:18 14;animation:waveFlow 8s linear infinite}
+    @keyframes waveFlow{to{stroke-dashoffset:-256}}
+
+    /* وميض المؤشر */
+    .cursor{animation:blink .85s steps(1) infinite}
     @keyframes blink{50%{opacity:0}}
+
+    /* نبض النقاط */
     .pulse{animation:pulse 2.2s ease-in-out infinite}
-    @keyframes pulse{50%{opacity:.35}}
-    .float{animation:cardfloat 5s ease-in-out infinite alternate}
-    @keyframes cardfloat{to{transform:translateY(-7px)}}
+    @keyframes pulse{50%{opacity:.25}}
+
+    /* طفو نافذة الكود */
+    .float{animation:cardfloat 4.5s ease-in-out infinite alternate}
+    @keyframes cardfloat{to{transform:translateY(-8px)}}
+
+    /* شريط التقدم داخل نافذة الكود */
+    .prog{animation:progressLoad 4s ease-in-out infinite alternate}
+    @keyframes progressLoad{0%{width:95px}100%{width:210px}}
   </style>
+
+  <!-- الخلفية المتحركة -->
   <g clip-path="url(#clip)">
     <rect width="1000" height="360" fill="url(#bg)"/>
-    <circle class="orbA" cx="180" cy="80" r="210" fill="url(#glowA)" filter="url(#blur)"/>
-    <circle class="orbB" cx="860" cy="300" r="230" fill="url(#glowB)" filter="url(#blur)"/>
+    <circle class="orbA" cx="180" cy="80" r="215" fill="url(#glowA)" filter="url(#blur)"/>
+    <circle class="orbB" cx="860" cy="300" r="235" fill="url(#glowB)" filter="url(#blur)"/>
     <rect width="1000" height="360" fill="url(#grid)"/>
+
+    <!-- موجة ضوئية متدفقة -->
+    <path class="wave" d="M0 300C210 230 300 390 520 300S830 220 1000 285" fill="none" stroke="url(#accent)" stroke-opacity=".22" stroke-width="1.8"/>
+
+    <!-- جزيئات ضوئية صاعدة في الخلفية -->
+    <circle cx="140" r="2" fill="#a78bfa" opacity=".45">
+      <animate attributeName="cy" values="365;-10" dur="11s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="380" r="1.8" fill="#38bdf8" opacity=".4">
+      <animate attributeName="cy" values="365;-10" dur="14s" begin="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="620" r="2.2" fill="#c084fc" opacity=".35">
+      <animate attributeName="cy" values="365;-10" dur="12.5s" begin="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="880" r="1.7" fill="#60a5fa" opacity=".45">
+      <animate attributeName="cy" values="365;-10" dur="10s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+
     <circle cx="820" cy="70" r="2" fill="#c4b5fd" class="pulse"/>
     <circle cx="920" cy="260" r="2" fill="#60a5fa" class="pulse"/>
-    <circle cx="570" cy="42" r="1.5" fill="#a78bfa"/>
-    <circle cx="70" cy="290" r="1.5" fill="#60a5fa"/>
-    <path d="M0 300C210 230 300 390 520 300S830 220 1000 285" fill="none" stroke="url(#accent)" stroke-opacity=".12" stroke-width="1.5"/>
   </g>
+
   <rect x="1" y="1" width="998" height="358" rx="23" fill="none" stroke="url(#stroke)"/>
+
+  <!-- النصوص الرئيسية -->
   <g class="sans">
     <rect x="54" y="42" width="222" height="31" rx="15.5" fill="#ffffff" fill-opacity=".055" stroke="#c4b5fd" stroke-opacity=".2"/>
     <circle cx="72" cy="57.5" r="4" fill="#a78bfa" class="pulse"/>
@@ -68,14 +106,48 @@
     <text x="56" y="198" font-size="20" font-weight="550" fill="url(#accent)">Full Stack Developer</text>
     <text x="56" y="236" class="mono" font-size="16" fill="#94a3b8">In a world full of chaos, I build logic.</text>
 
+    <!-- سطر الأوامر مع الكتابة الحية (Live Typing) -->
     <text x="56" y="290" class="mono" font-size="16" fill="#64748b">~</text>
     <text x="76" y="290" class="mono" font-size="17" fill="#a78bfa">❯</text>
-    <g class="mono" font-size="16" fill="#e2e8f0">
-      <text class="msg" x="100" y="290">building web &amp; desktop applications<tspan class="cursor" fill="#38bdf8"> ▌</tspan></text>
-      <text class="msg m2" x="100" y="290">turning ideas into useful software<tspan class="cursor" fill="#38bdf8"> ▌</tspan></text>
-      <text class="msg m3" x="100" y="290">learn() · build() · improve()<tspan class="cursor" fill="#38bdf8"> ▌</tspan></text>
+
+    <!-- الجملة 1: building web & desktop applications (35 حرف) -->
+    <g>
+      <svg x="100" y="270" height="30" width="0">
+        <animate attributeName="width" values="0;0;345;345;0;0" keyTimes="0;0.02;0.16;0.28;0.33;1" dur="15s" repeatCount="indefinite"/>
+        <text x="0" y="20" class="mono" font-size="16" fill="#e2e8f0" xml:space="preserve">building web &amp; desktop applications</text>
+      </svg>
+      <rect y="274" width="9" height="19" fill="#38bdf8" class="cursor">
+        <animate attributeName="x" values="100;100;445;445;100;100" keyTimes="0;0.02;0.16;0.28;0.33;1" dur="15s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.33;0.331;1" dur="15s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+
+    <!-- الجملة 2: turning ideas into useful software (34 حرف) -->
+    <g>
+      <svg x="100" y="270" height="30" width="0">
+        <animate attributeName="width" values="0;0;335;335;0;0" keyTimes="0;0.35;0.49;0.61;0.66;1" dur="15s" repeatCount="indefinite"/>
+        <text x="0" y="20" class="mono" font-size="16" fill="#e2e8f0" xml:space="preserve">turning ideas into useful software</text>
+      </svg>
+      <rect y="274" width="9" height="19" fill="#38bdf8" class="cursor">
+        <animate attributeName="x" values="100;100;435;435;100;100" keyTimes="0;0.35;0.49;0.61;0.66;1" dur="15s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.349;0.35;0.66;0.661;1" dur="15s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+
+    <!-- الجملة 3: learn() · build() · improve() (29 حرف) -->
+    <g>
+      <svg x="100" y="270" height="30" width="0">
+        <animate attributeName="width" values="0;0;288;288;0;0" keyTimes="0;0.68;0.82;0.94;0.99;1" dur="15s" repeatCount="indefinite"/>
+        <text x="0" y="20" class="mono" font-size="16" fill="#e2e8f0" xml:space="preserve">learn() · build() · improve()</text>
+      </svg>
+      <rect y="274" width="9" height="19" fill="#38bdf8" class="cursor">
+        <animate attributeName="x" values="100;100;388;388;100;100" keyTimes="0;0.68;0.82;0.94;0.99;1" dur="15s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.679;0.68;0.99;1" dur="15s" repeatCount="indefinite"/>
+      </rect>
     </g>
   </g>
+
+  <!-- نافذة الكود العائمة -->
   <g class="float">
     <rect x="675" y="70" width="270" height="220" rx="17" fill="#0b1022" fill-opacity=".88" stroke="url(#stroke)" stroke-opacity=".8"/>
     <rect x="675" y="70" width="270" height="42" rx="17" fill="#ffffff" fill-opacity=".045"/>
@@ -93,7 +165,8 @@
     <text x="773" y="211" class="mono" font-size="13" fill="#d8b4fe">"Apps + Desktop"</text>
     <text x="697" y="242" class="mono" font-size="14" fill="#e2e8f0">};</text>
     <rect x="697" y="260" width="226" height="4" rx="2" fill="#1e293b"/>
-    <rect x="697" y="260" width="142" height="4" rx="2" fill="url(#accent)"/>
+    <rect class="prog" x="697" y="260" width="142" height="4" rx="2" fill="url(#accent)"/>
   </g>
+
   <text x="944" y="334" text-anchor="end" class="mono" font-size="11" fill="#64748b">github.com/ahmedmohamedtaha343</text>
 </svg>
